@@ -1,9 +1,13 @@
 ﻿
 function callAPI() {
-    fetch('/api/logon')
-        .then(res => res.text())
-        .then(d => alert("Submitted Successfully"));
-    window.location.href = "/public/longon.html";
+   try
+   {
+    window.location.href = "/public/Longon.html";
+   }
+    catch( err)
+   {
+       console.error(err);
+   }
 }
 
 function loadTempleInfo() {
@@ -80,4 +84,5 @@ async function loadPoojaSchedules() {
 }
 
 loadPoojaSchedules();
+
 //loadTempleInfo();
