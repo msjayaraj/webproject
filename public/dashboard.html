@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📦 Order Management</h1>
+            <p>Manage your purchase orders efficiently</p>
+        </header>
+
+        <section class="cards">
+
+            <div class="card create">
+                <h3>Create Pooja</h3>
+                <p>Add a new pooja order</p>
+                <button onclick="navigateToCreate()">Daily Pooja</button>
+            </div>
+
+            <div class="card edit">
+                <h3>Edit Order</h3>
+                <input type="text" id="editOrderId" placeholder="Order ID">
+                <button onclick="editOrder()">Edit</button>
+            </div>
+
+            <div class="card delete">
+                <h3>Delete Order</h3>
+                <input type="text" id="deleteOrderId" placeholder="Order ID">
+                <button onclick="deleteOrder()">Delete</button>
+            </div>
+
+            <div class="card view">
+                <h3>View Orders</h3>
+                <p>See all purchase orders</p>
+                <button onclick="viewOrders()">View</button>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="/js/dashboard_script.js"></script>
+</body>
+</html>

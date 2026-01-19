@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Order CRUD</title>
+    <link rel="stylesheet" href="/css/new-order.css">
+</head>
+<body>
+
+    <h2>Purchase Order</h2>
+
+    <form id="poForm">
+        <input type="hidden" id="orderId">
+
+        <label>Supplier Name</label>
+        <input type="text" id="supplier" required>
+
+        <label>Product Name</label>
+        <input type="text" id="product" required>
+
+        <label>Quantity</label>
+        <input type="number" id="quantity" required>
+
+        <label>Price</label>
+        <input type="number" id="price" required>
+
+        <button type="submit">Save Purchase Order</button>
+    </form>
+
+    <h2>All Purchase Orders</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Supplier</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="orderTable"></tbody>
+    </table>
+
+    <script>
+    let orders = JSON.parse(localStorage.getItem("purchaseOrders")) || [];
+
+    const form = document.getElementById("poForm");
+    const table = document.getElementById("orderTable");
+
+    function renderOrders() {
+        table.innerHTML = "";
+        orders.forEach((order, index) => {
+            table.innerHTML += `
+                <tr>
+                    <td>${order.id}</td>
+                    <td>${order.supplier}</td>
+                    <td>${order.product}</td>
+                    <td>${order.quantity}</td>
+                    <td>${order.price}</td>
+                    <td>${order.quantity * order.price}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editOrder(${index})">Edit</button>
+                        <button class="delete-btn" onclick="deleteOrder(${index})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const id = document.getElementById("orderId").value;
+        const supplier = document.getElementById("supplier").value;
+        const product = document.getElementById("product").value;
+        const quantity = document.getElementById("quantity").value;
+        const price = document.getElementById("price").value;
+
+        if (id !== "") {
+            orders[id] = { id: orders[id].id, supplier, product, quantity, price };
+        } else {
+            orders.push({
+                id: "PO-" + Date.now(),
+                supplier,
+                product,
+                quantity,
+                price
+            });
+        }
+
+        localStorage.setItem("purchaseOrders", JSON.stringify(orders));
+        form.reset();
+        document.getElementById("orderId").value = "";
+        renderOrders();
+    });
+
+    function editOrder(index) {
+        const order = orders[index];
+        document.getElementById("orderId").value = index;
+        document.getElementById("supplier").value = order.supplier;
+        document.getElementById("product").value = order.product;
+        document.getElementById("quantity").value = order.quantity;
+        document.getElementById("price").value = order.price;
+    }
+
+    function deleteOrder(index) {
+        if (confirm("Are you sure you want to delete this order?")) {
+            orders.splice(index, 1);
+            localStorage.setItem("purchaseOrders", JSON.stringify(orders));
+            renderOrders();
+        }
+    }
+
+    renderOrders();
+    </script>
+
+</body>
+</html>

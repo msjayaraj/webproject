@@ -1,0 +1,211 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fffdf6;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #ffcc80, #f44336);
+  height: 90vh;
+  background-image: url('images/pic1.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(224, 123, 7, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+  height: 700px;
+}
+
+.overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.2em;
+}
+
+.btn {
+  background-color: #ffd54f;
+  color: #4b2e05;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffb300;
+}
+
+/*Banner*/
+
+ h2 {
+		font-size: 18px;
+		color: #fff;
+		text-align: center;
+		letter-spacing: -2px;
+		margin: 0;
+	}
+
+/* Navigation */
+nav {
+    background: linear-gradient(90deg, #f57c00, #e65100);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px 20px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+
+nav a:hover {
+  color: #ffecb3;
+}
+/*button like anchor style*/
+nav button {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 20px;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    font: inherit;
+    cursor:pointer
+}
+
+/* Sections */
+.section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  text-align: center;
+  color: #b71c1c;
+}
+
+/* About */
+.about-section {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+}
+
+/* Pooja Section */
+.pooja-section {
+  background: linear-gradient(135deg, #fff9c4, #ffecb3);
+}
+
+.pooja-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pooja-card {
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.pooja-card:hover {
+  transform: scale(1.05);
+}
+
+.morning { background-color: #f57c00; }
+.sunshine { background-color: #ffb300; }
+.golden { background-color: #ffa000; }
+.dusk { background-color: #e65100; }
+
+/* Festivals */
+.festival-section {
+  background: linear-gradient(135deg, #ffcdd2, #f8bbd0);
+}
+
+.festival-section ul {
+  list-style: "🪔 ";
+  padding-left: 30px;
+  font-size: 1.1em;
+}
+
+/* Gallery */
+.gallery-section {
+  background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact-section {
+  background: linear-gradient(135deg, #dcedc8, #c5e1a5);
+  text-align: center;
+}
+
+.contact-section p {
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, #d84315, #bf360c);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .overlay h1 {
+    font-size:
