@@ -205,7 +205,50 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-  .overlay h1 {
-    font-size:
+.image-container img {
+    width: 300px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Photo Gallery Style*/
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 60%;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.gallery-item .title {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Modal background for Photo gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+    /* Full-size image */
+    .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+    }
