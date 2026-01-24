@@ -9,8 +9,8 @@
     <meta property="og:url" content="https://kuttiyankavutemple.com/">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="ശ്രീ കുറ്റിയങ്കാവ് ഭഗവതി ക്ഷേത്രം കേരളത്തിന്റെ ഹൃദയഭാഗത്ത് സ്ഥിതിചെയ്യുന്ന ദേവീഭക്തിയാൽ നിറഞ്ഞ ഒരു വിശുദ്ധ ക്ഷേത്രമാണ്." />
-    <link rel="stylesheet" href="/css/main.css?v=5">
-    <script src="app.js?v=7"></script>
+    <link rel="stylesheet" href="/css/main.css?v=6">
+    <script src="app.js?v=6"></script>
 </head>
 <!-- Header Section -->
 
@@ -38,7 +38,7 @@
         <a href="#festivals">Festivals</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
-        <button class="link-like" onclick="callAPI()">Login</button>
+        <button class="link-like" onclick="callAPI()">Sign In</button>
     </nav>
 
     <section id="about" class="section about-section">
@@ -61,16 +61,42 @@
         <ul id="item_list"></ul>
     </section>
 
-    <!-- Gallery -->
+    <!-- OLD GALLERY
+        <section id="gallery" class="section gallery-section"> 
+            <h2>📸 ഫോട്ടോ ഗ്യാലറി</h2> 
+            <div class="gallery-grid"> 
+            <img src="images/temple_front.png" alt="Temple Entrance"> 
+            <img src="images/festival.png" alt="Festival Celebration">
+            <img src="images/devi_idol.png" alt="Devi Idol"> 
+            <img src="images/para_schedule_2026.jpg" alt="Pooja Ceremony" onclick="openModal(this)"> 
+            </div> 
+        </section>
+    -->
+    <!--New Gallery -->
     <section id="gallery" class="section gallery-section">
         <h2>📸 ഫോട്ടോ ഗ്യാലറി</h2>
-        <div class="gallery-grid">
+        <div class="gallery-item">
             <img src="images/temple_front.png" alt="Temple Entrance">
+        </div>
+
+        <!--<div class="gallery-item">
             <img src="images/festival.png" alt="Festival Celebration">
+            <p class="title">Festival Celebration</p>
+        </div>-->
+
+        <div class="gallery-item">
             <img src="images/devi_idol.png" alt="Devi Idol">
-            <img src="images/pooja_ceremony.png" alt="Pooja Ceremony">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/para_schedule_2026.jpg" alt="Pooja Ceremony" onclick="openModal(this)">
+
         </div>
     </section>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="fullImage">
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
@@ -88,5 +114,4 @@
 
 
 </body>
-
 </html>
