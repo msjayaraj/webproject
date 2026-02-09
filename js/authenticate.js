@@ -87,3 +87,8 @@ window.CheckRole = async function () {
     console.log("Entering CheckUserRole");
 }
 
+async function dummylogin() {
+   
+    alert("Login successful");
+    window.location.href = "/public/dashboard.html";
+}

@@ -1,14 +1,30 @@
 ﻿
 function callAPI() {
-   try
-   {
-    window.location.href = "/public/Longon.html";
-   }
-    catch( err)
-   {
-       console.error(err);
-   }
+    //fetch('/api/logon')
+    //    .then(res => res.text())
+    //    .then(d => alert("Submitted Successfully"));
+    try {
+        window.location.href = "/public/Longon.html";
+    }
+    catch (err) {
+        console.error(err);
+    }
 }
+
+window.loadPage = function (page) {
+    fetch(`/public/${page}.html`)
+        .then(res => {
+            if (!res.ok) throw new Error("Not found");
+            return res.text();
+        })
+        .then(html => {
+            document.getElementById("content").innerHTML = html;
+        })
+        .catch(() => {
+            document.getElementById("content").innerHTML =
+                "<p>Page not found</p>";
+        });
+};
 
 function loadTempleInfo() {
     try {
@@ -83,6 +99,18 @@ async function loadPoojaSchedules() {
     }
 }
 
-loadPoojaSchedules();
 
-//loadTempleInfo();
+ function openModal(img) {
+  const modal = document.getElementById("imageModal");
+    const fullImage = document.getElementById("fullImage");
+
+    modal.style.display = "flex";
+    fullImage.src = img.src;
+}
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+}
+
+
+loadPoojaSchedules();
