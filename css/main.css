@@ -72,6 +72,9 @@ nav {
     padding: 10px 0;
     font-size: 16px;
     font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 nav a {
@@ -113,6 +116,66 @@ nav button {
   color: #b71c1c;
 }
 
+.page-section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-card {
+    max-width: 1100px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.about-bg {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+}
+
+.pooja-bg {
+    background: linear-gradient(135deg, #fff9c4, #ffecb3);
+}
+
+.festival-bg {
+    background: linear-gradient(135deg, #ffcdd2, #f8bbd0);
+}
+
+.gallery-bg {
+    background: linear-gradient(135deg, #b3e5fc, #81d4fa);
+}
+
+.contact-bg {
+    background: linear-gradient(135deg, #dcedc8, #c5e1a5);
+}
+
+.content-card h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #b71c1c;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.content-card h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #b71c1c;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 /* About */
 .about-section {
   background: linear-gradient(135deg, #fff3e0, #ffe0b2);
@@ -120,7 +183,8 @@ nav button {
 
 /* Pooja Section */
 .pooja-section {
-  background: linear-gradient(135deg, #fff9c4, #ffecb3);
+    background: linear-gradient(135deg, #fff9c4, #ffecb3);
+   
 }
 
 .pooja-grid {
@@ -149,17 +213,74 @@ nav button {
 .dusk { background-color: #e65100; }
 
 /* Festivals */
-.festival-section {
-  background: linear-gradient(135deg, #ffcdd2, #f8bbd0);
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
 }
 
-.festival-section ul {
-  list-style: "🪔 ";
-  padding-left: 30px;
-  font-size: 1.1em;
+/* Base Card */
+.festival-card {
+    border-radius: 20px;
+    padding: 28px 24px;
+    color: #ffffff;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Gallery */
+    /* Decorative glow */
+    .festival-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(255,255,255,0.25), transparent 60%);
+    }
+
+    /* Hover lift */
+    .festival-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 22px 50px rgba(0,0,0,0.28);
+    }
+
+    /* Title */
+    .festival-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    /* Description */
+    .festival-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        opacity: 0.95;
+    }
+
+.festival-red {
+    background: linear-gradient(135deg, #c62828, #b71c1c);
+}
+
+.festival-gold {
+    background: linear-gradient(135deg, #ffb300, #f57c00);
+}
+
+.festival-orange {
+    background: linear-gradient(135deg, #ef6c00, #e65100);
+}
+
+.festival-pink {
+    background: linear-gradient(135deg, #ad1457, #880e4f);
+}
+
+.festival-green {
+    background: linear-gradient(135deg, #558b2f, #33691e);
+}
+
+/* Gallery old style */
 .gallery-section {
   background: linear-gradient(135deg, #b3e5fc, #81d4fa);
 }
@@ -211,28 +332,61 @@ footer {
     border-radius: 6px;
 }
 
-/* Photo Gallery Style*/
-
-.gallery-grid {
+/* Photo Gallery Modern Style*/
+.modern-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
 .gallery-item {
-    text-align: center;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
 .gallery-item img {
-    width: 60%;
-    border-radius: 6px;
-    cursor: pointer;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
-.gallery-item .title {
-    margin-top: 6px;
-    font-size: 14px;
-    color: #333;
+.gallery-item figcaption {
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #5d4037;
+    background: #fffaf3;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Modal background for Photo gallery */

@@ -1,4 +1,13 @@
-﻿fetch('/public/header.json')
+﻿const colors = [
+    "festival-red",
+    "festival-gold",
+    "festival-orange",
+    "festival-pink",
+    "festival-green"
+];
+
+
+fetch('/public/header.json')
     .then(res => res.json())
     .then(data => {
 
@@ -51,16 +60,37 @@ fetch('/public/header.json')
         const list = document.getElementById('item_list');
         list.innerHTML = '';
         //console.log('Festival List:', festivals.content);
-        festivals.content.forEach(item => {
-            const li = document.createElement('li');
-            li.className = 'festival-section';
-            //console.log('Festival title:', item.title);
+        //festivals.content.forEach(item => {
+        //    const li = document.createElement('li');
+        //    li.className = 'festival-section';
+        //    //console.log('Festival title:', item.title);
 
-            li.innerHTML = `
-            <strong>${item.title}:</strong> ${item.description}
-            ` ;
+        //    li.innerHTML = `
+        //    <strong>${item.title}:</strong> ${item.description}
+        //    ` ;
 
-            list.appendChild(li);
+        //    list.appendChild(li);
+        //});
+
+        festivals.content.forEach((festival, index) => {
+            item_list.innerHTML += `
+            <div class="festival-card ${colors[index % colors.length]}">
+            <h3>${festival.title}</h3>
+            <p>${festival.description}</p>
+            </div>
+            `;
         });
+
+        festivals.content.forEach(item => {
+
+            item_list.innerHTML += `
+         <div class="festival-card ${colors[index % colors.length]}">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+          </div>
+          ` ;
+           
+        });
+
     })
     .catch(err => console.error('Failed to load list:', err));

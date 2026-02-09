@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ശ്രീ കുറ്റിയങ്കാവ് ഭഗവതി ക്ഷേത്രം- തൃശൂർ,കേരളം </title>
     <meta property="og:title" content="ശ്രീ കുറ്റിയങ്കാവ് ഭഗവതി ക്ഷേത്രം- തൃശൂർ,കേരളം" />
-    <meta property="og:image" content="https://msjayaraj.github.io/webproject/images/devi_idol.png" />
+    <meta property="og:image" content="https://kuttiyankavutemple.com/images/devi_idol.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://kuttiyankavutemple.com/">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="ശ്രീ കുറ്റിയങ്കാവ് ഭഗവതി ക്ഷേത്രം കേരളത്തിന്റെ ഹൃദയഭാഗത്ത് സ്ഥിതിചെയ്യുന്ന ദേവീഭക്തിയാൽ നിറഞ്ഞ ഒരു വിശുദ്ധ ക്ഷേത്രമാണ്." />
-    <link rel="stylesheet" href="/css/main.css?v=7">
-    <script src="app.js?v=7"></script>
+    <link rel="stylesheet" href="/css/main.css?v=71">
+    <script src="app.js?v=61"></script>
 </head>
 <!-- Header Section -->
 
@@ -41,58 +43,70 @@
         <button class="link-like" onclick="callAPI()">Sign In</button>
     </nav>
 
-    <section id="about" class="section about-section">
-        <h2 id="about-heading"> </h2>
-        <p id="about-content">
-
-        </p>
-        <p id="about-tagline"> </p>
+    <section id="about" class="page-section about-bg">
+        <div class="content-card">
+            <h2 id="about-heading"> </h2>
+            <p id="about-content"> </p>
+            <p id="about-tagline"> </p>
+            </div>
     </section>
 
     <!-- Daily Poojas -->
-    <section id="poojas" class="section pooja-section">
-        <h2>🪔 പ്രതിദിന പൂജകൾ</h2>
-        <div id="poojaDiv" class="pooja-grid"></div>
+    <section id="poojas" class="page-section pooja-bg ">
+        <div class="content-card">
+            <h2>🪔 പ്രതിദിന പൂജകൾ</h2>
+            <div id="poojaDiv" class="pooja-grid"></div>
+        </div>
     </section>
 
     <!-- Festivals Section -->
-    <section id="festivals" class="section festival-section">
-        <h2 id="festivals-title"></h2>
-        <ul id="item_list"></ul>
-    </section>
+    <section id="festivals" class="page-section festival-bg">
+        <div class="content-card">
+            <h2 id="festivals-title">🎉 ഉത്സവങ്ങൾ</h2>
 
-    <!-- OLD GALLERY
-        <section id="gallery" class="section gallery-section"> 
-            <h2>📸 ഫോട്ടോ ഗ്യാലറി</h2> 
-            <div class="gallery-grid"> 
-            <img src="images/temple_front.png" alt="Temple Entrance"> 
-            <img src="images/festival.png" alt="Festival Celebration">
-            <img src="images/devi_idol.png" alt="Devi Idol"> 
-            <img src="images/para_schedule_2026.jpg" alt="Pooja Ceremony" onclick="openModal(this)"> 
-            </div> 
-        </section>
-    -->
-    <!--New Gallery -->
-    <section id="gallery" class="section gallery-section">
-        <h2>📸 ഫോട്ടോ ഗ്യാലറി</h2>
-        <div class="gallery-item">
-            <img src="images/temple_front.png" alt="Temple Entrance">
-        </div>
-
-        <!--<div class="gallery-item">
-            <img src="images/festival.png" alt="Festival Celebration">
-            <p class="title">Festival Celebration</p>
-        </div>-->
-
-        <div class="gallery-item">
-            <img src="images/devi_idol.png" alt="Devi Idol">
-        </div>
-
-        <div class="gallery-item">
-            <img src="images/para_schedule_2026.jpg" alt="Pooja Ceremony" onclick="openModal(this)">
-
+            <div id="item_list" class="festival-grid">
+                <!-- JS will inject items here -->
+            </div>
         </div>
     </section>
+
+    <section id="gallery" class="page-section gallery-bg">
+        <div class="content-card">
+            <h2>📸 ഫോട്ടോ ഗ്യാലറി</h2>
+
+            <div class="modern-gallery">
+                <figure class="gallery-item">
+                    <img src="images/temple_front2.png" alt="Temple Entrance" onclick="openModal(this)">
+                    <figcaption>ക്ഷേത്ര പ്രവേശനം</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/devi_idol.png" alt="Devi Idol" onclick="openModal(this)">
+                    <figcaption>ഭഗവതി വിഗ്രഹം</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/Temple_Pond.png" alt="Temple Pond" onclick="openModal(this)">
+                    <figcaption>ക്ഷേത്ര കുളം</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/festival.png" alt="Festival Celebration" onclick="openModal(this)">
+                    <figcaption>ഉത്സവ ആഘോഷങ്ങൾ</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/temple_festival2.png" alt="Temple Festival" onclick="openModal(this)">
+                    <figcaption>കൂട്ടി എഴുന്നള്ളിപ്പ്  </figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/Night_View.png" alt="Temple Festival" onclick="openModal(this)">
+                    <figcaption>ദീപാലങ്കാരം  </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    
+  
 
     <div id="imageModal" class="modal" onclick="closeModal()">
         <img id="fullImage">
