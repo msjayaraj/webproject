@@ -7,16 +7,25 @@
 </head>
 <body>
 
-    <h2>Purchase Order</h2>
+    <h2>Online Pooja Booking</h2>
 
     <form id="poForm">
         <input type="hidden" id="orderId">
 
-        <label>Supplier Name</label>
-        <input type="text" id="supplier" required>
+        <label>Name of Pooja</label>
+        <input type="text" id="pooja-name" required>
 
-        <label>Product Name</label>
-        <input type="text" id="product" required>
+        <label>Name</label>
+        <input type="text" id="name" required>
+
+        <label>Address</label>
+        <input type="text" id="address">
+
+        <label>Star</label>
+        <input type="text" id="star" required>
+
+        <label>Date</label>
+        <input type="text" id="date">
 
         <label>Quantity</label>
         <input type="number" id="quantity" required>
@@ -24,7 +33,7 @@
         <label>Price</label>
         <input type="number" id="price" required>
 
-        <button type="submit">Save Purchase Order</button>
+        <button type="submit">Save</button>
     </form>
 
     <h2>All Purchase Orders</h2>
@@ -32,9 +41,11 @@
     <table>
         <thead>
             <tr>
-                <th>Order ID</th>
-                <th>Supplier</th>
-                <th>Product</th>
+                <th>Pooja ID</th>
+                <th>Pooja Name</th>
+                <th>Address</th>
+                <th>Star</th>
+                <th>Date</th>
                 <th>Quantity</th>
                 <th>Price</th>
                 <th>Total</th>
@@ -56,8 +67,10 @@
             table.innerHTML += `
                 <tr>
                     <td>${order.id}</td>
-                    <td>${order.supplier}</td>
-                    <td>${order.product}</td>
+                    <td>${order.pooja_name}</td>
+                    <td>${order.address}</td>
+                    <td>${order.star}</td>
+                    <td>${order.date}</td>
                     <td>${order.quantity}</td>
                     <td>${order.price}</td>
                     <td>${order.quantity * order.price}</td>
@@ -74,18 +87,24 @@
         e.preventDefault();
 
         const id = document.getElementById("orderId").value;
-        const supplier = document.getElementById("supplier").value;
-        const product = document.getElementById("product").value;
+        const pooja_name = document.getElementById("pooja-name").value;
+        const name = document.getElementById("name").value;
+        const address = document.getElementById("address").value;
+        const star = document.getElementById("star").value;
+        const date = document.getElementById("date").value;
         const quantity = document.getElementById("quantity").value;
         const price = document.getElementById("price").value;
 
         if (id !== "") {
-            orders[id] = { id: orders[id].id, supplier, product, quantity, price };
+            orders[id] = { id: orders[id].id, pooja_name, name, address, star,date,quantity, price };
         } else {
             orders.push({
                 id: "PO-" + Date.now(),
-                supplier,
-                product,
+                pooja_name,
+                name,
+                address,
+                star,
+                date,
                 quantity,
                 price
             });
@@ -100,8 +119,10 @@
     function editOrder(index) {
         const order = orders[index];
         document.getElementById("orderId").value = index;
-        document.getElementById("supplier").value = order.supplier;
-        document.getElementById("product").value = order.product;
+        document.getElementById("pooja-name").value = order.pooja_name;
+        document.getElementById("address").value = order.address;
+        document.getElementById("star").value = order.star;
+        document.getElementById("date").value = order.date;
         document.getElementById("quantity").value = order.quantity;
         document.getElementById("price").value = order.price;
     }
